@@ -6,20 +6,19 @@ Both, database file name and table name can be passed to the plugin via argument
 s are created during the scan. Nmap's regular output (-o) will not be modified in any way.
 
 
-
 usage 
 =====
-nmap --script sqlite-output <target>
+  nmap --script sqlite-output <target>
 
 example
 =======
-$ nmap -sS -A -F --script sqlite-output --script-args=dbname=scan.sqlite,dbtable=scandata scanme.nmap.org
-$ sqlite3 can.sqlite
-sqlite> select * from scandata;
-scanme.nmap.org|74.207.244.221|22|tcp|ssh|OpenSSH5.3p1 Debian 3ubuntu7.1
-scanme.nmap.org|74.207.244.221|80|tcp|http|Apache httpd2.2.14
+  $ nmap -sS -A -F --script sqlite-output --script-args=dbname=scan.sqlite,dbtable=scandata scanme.nmap.org
+  $ sqlite3 can.sqlite
+  sqlite> select * from scandata;
+  scanme.nmap.org|74.207.244.221|22|tcp|ssh|OpenSSH5.3p1 Debian 3ubuntu7.1
+  scanme.nmap.org|74.207.244.221|80|tcp|http|Apache httpd2.2.14
 
 args
 =====
-dbname:  name of sqlite database file (default: scan.sqlite)
-dbtable: name of database table in which the output will be written (default: scandata)
+  dbname:  name of sqlite database file (default: scan.sqlite)
+  dbtable: name of database table in which the output will be written (default: scandata)
