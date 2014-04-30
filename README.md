@@ -1,9 +1,9 @@
 nmap-sqlite
 ===========
 
-This nmap plugin stores the following nmap output into a sqlite3 database: Hostname, IP, port number, protocol (tcp/udp), service and version.
+This nmap script stores the following nmap output into a sqlite3 database: Hostname, IP, port number, protocol (tcp/udp), service and version.
 
-Both, database file name and table name can be passed to the plugin via arguments (see @args or @example), data will always be appended to an existing table. Non-existant database files or tables are created during the scan. Nmap's regular output (-o) will not be modified in any way.
+Both, database file name and table name can be passed to the script via arguments (see @args or @example), data will always be appended to an existing table. Non-existant database files or tables are created during the scan. Nmap's regular output (-o) will not be modified in any way.
 
 
 usage 
