@@ -44,7 +44,7 @@ end
 
 env = luasql.sqlite3()
 con = env:connect(dbname)
-res = con:execute (string.format("CREATE TABLE '%s' (hostname varchar(100), ip varchar(16), port integer(5), protocol varchar(3), service varchar(100), version varchar(100))", dbtable))
+res = con:execute (string.format("CREATE TABLE '%s' (hostname varchar(100), ip varchar(16), port integer(5), protocol varchar(3), service varchar(100), version varchar(100))", con:escape(dbtable)))
 
 function portaction (host, port)
         local version = ""
@@ -54,7 +54,8 @@ function portaction (host, port)
         if (port.version.version~=nil) then
                 version = version .. port.version.version
         end
-        res = con:execute(string.format("INSERT INTO '%s' VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" , dbtable, host.name, host.ip, port.number, port.protocol, port.service, version))
+        res = con:execute(string.format("INSERT INTO '%s' VALUES ('%s', '%s', '%s', '%s', '%s', '%s')" , con:escape(dbtable), con:escape(host.name), con:escape(host.ip), con:escape(port.number), con:escape(port.protocol), con:escape(port.service), con:escape(version)))
+	
 end
 
 function postaction ()
