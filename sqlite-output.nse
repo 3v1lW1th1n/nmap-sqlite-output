@@ -2,6 +2,8 @@ description = [[
 This script stores the following nmap output into a sqlite3 database: Hostname, IP, port number, protocol (tcp/udp), service and version
 Both, database file name and table name can be passed to the script via arguments (see @args or @example), data will always be appended to an existing table. Non-existant database files or table
 s are created during the scan. Nmap's regular output (-o) will not be modified in any way.
+
+Dependencies: luasql (http://keplerproject.org/luasql) 
 ]]
 
 ---
