@@ -26,7 +26,7 @@ author = "Michael Clemens"
 license = "Same as Nmap--See http://nmap.org/book/man-legal.html"
 categories = {"external", "safe"}
 
-require "luasql.sqlite3"
+local luasql = require "luasql.sqlite3"
 local nmap = require "nmap"
 
 portrule = function () return true end
