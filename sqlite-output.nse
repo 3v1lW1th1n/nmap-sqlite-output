@@ -12,7 +12,7 @@ Dependencies: luasql (http://keplerproject.org/luasql)
 --
 -- @example
 -- $ nmap -sS -A -F --script sqlite-output --script-args=dbname=scan.sqlite,dbtable=scandata scanme.nmap.org
--- $ sqlite3 can.sqlite
+-- $ sqlite3 scan.sqlite
 -- sqlite> select * from scandata;
 -- scanme.nmap.org|74.207.244.221|22|tcp|ssh|OpenSSH5.3p1 Debian 3ubuntu7.1
 -- scanme.nmap.org|74.207.244.221|80|tcp|http|Apache httpd2.2.14
